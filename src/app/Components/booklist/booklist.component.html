@@ -1,0 +1,33 @@
+<div class="container">
+
+
+    <div class="container" style="width: 60%;">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                ngModel="searchtext">
+            <button class="btn btn-outline-success" (click)="Search()">Search</button>
+        </form>
+    </div>
+    <table class="table table-striped">
+        <thead class="table-header">
+            <tr>
+                <th>Book Id</th>
+                <th>Book Name</th>
+                <th>Book's Author</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let book of books" class="text-center">
+                <td>{{ book.bookid }}</td>
+                <td>{{ book.booktitle}}</td>
+                <td>{{ book.author }}</td>
+                <td>
+                    <button (click)="add()" class="btn btn-danger" style="margin-left: 10px">
+                        Add
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
